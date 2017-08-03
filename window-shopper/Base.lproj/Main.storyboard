@@ -5,8 +5,14 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Light</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
@@ -30,28 +36,50 @@
                                     <constraint firstAttribute="width" constant="65" id="dor-Kz-Qmq"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your hourly wage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wX5-r7-Gks" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
-                                <rect key="frame" x="72" y="164" width="230" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your hourly wage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wX5-r7-Gks" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
+                                <rect key="frame" x="36" y="155" width="303" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="YaQ-c6-dvV"/>
+                                </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UdZ-ir-p8l" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
+                                <rect key="frame" x="36" y="220" width="303" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3wI-Hq-wNI"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mLs-iF-qth" firstAttribute="top" secondItem="JfV-km-hge" secondAttribute="bottom" id="2fr-G8-mwU"/>
                             <constraint firstItem="FKM-pR-cZz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Fc-Ns-wUG"/>
+                            <constraint firstItem="wX5-r7-Gks" firstAttribute="top" secondItem="FKM-pR-cZz" secondAttribute="bottom" constant="35" id="8Fp-ig-BsU"/>
+                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="wX5-r7-Gks" secondAttribute="trailing" constant="20" id="NQg-0f-x5M"/>
+                            <constraint firstItem="wX5-r7-Gks" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RCI-9n-nsW"/>
+                            <constraint firstItem="UdZ-ir-p8l" firstAttribute="height" secondItem="wX5-r7-Gks" secondAttribute="height" id="gVD-6W-ajH"/>
                             <constraint firstItem="JfV-km-hge" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jj8-dc-QKy"/>
+                            <constraint firstItem="UdZ-ir-p8l" firstAttribute="top" secondItem="wX5-r7-Gks" secondAttribute="bottom" constant="25" id="ky5-ha-NU5"/>
                             <constraint firstItem="FKM-pR-cZz" firstAttribute="top" secondItem="oA5-jg-loy" secondAttribute="bottom" constant="35" id="l06-GI-99e"/>
+                            <constraint firstItem="UdZ-ir-p8l" firstAttribute="width" secondItem="wX5-r7-Gks" secondAttribute="width" id="ldW-XN-ImV"/>
+                            <constraint firstItem="UdZ-ir-p8l" firstAttribute="centerX" secondItem="wX5-r7-Gks" secondAttribute="centerX" id="mCB-uO-wMW"/>
                             <constraint firstAttribute="trailing" secondItem="JfV-km-hge" secondAttribute="trailing" id="qlS-LI-3KU"/>
                             <constraint firstItem="JfV-km-hge" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="z6Q-WL-Odm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="priceTxt" destination="UdZ-ir-p8l" id="NKW-cA-Dpl"/>
+                        <outlet property="wageTxt" destination="wX5-r7-Gks" id="HOs-wT-hZ4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.40000000000001" y="137.18140929535232"/>
+            <point key="canvasLocation" x="138" y="-35"/>
         </scene>
     </scenes>
     <resources>
